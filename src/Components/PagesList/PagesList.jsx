@@ -33,20 +33,18 @@ function PagesList() {
                 </button>
                 {
                     arrayWithPages.map((page,index) => {
-                        if (arrayWithPages.length-1) {
-                            return (
-                                <button
-                                    disabled={currentPage === index+1}
-                                    className={styles.buttonNext}
-                                    key={index}
-                                    onClick={()=>{
-                                        <ShowPokemons currentPage={setCurrentPage(index+1)} />
-                                        /* showPokemons(copyAllPokemons,setCurrentPage(index+1) ) */
-                                    }}>
-                                        {index+1}
-                                </button>
-                            );
-                        }
+                        return (
+                            <button
+                                disabled={currentPage === index+1}
+                                className={styles.buttonNext}
+                                key={index}
+                                onClick={()=>{
+                                    <ShowPokemons currentPage={setCurrentPage(index+1)} />
+                                    /* showPokemons(copyAllPokemons,setCurrentPage(index+1) ) */
+                                }}>
+                                    {index+1}
+                            </button>
+                        );
                     })
                 }
                 <button className={styles.buttonNext} disabled={currentPage === totalPages} onClick={nextPage}>
