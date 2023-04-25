@@ -5,6 +5,7 @@ import styles from './Detail.module.css'
 import colorTypesGenerator from  '../../utils/colorTypesGenerator'
 import { handlerDelete } from './handlersDetail';
 import redirectHome from './redirectHome';
+import axios from 'axios';
 
 function Detail() {
   const {id}=useParams()
@@ -14,9 +15,18 @@ function Detail() {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    fetch(`/pokemons/${id}`)
+    axios.get(`/pokemons/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        setPokemon(response.data);
+      }).catch((err) => {
+        console.log(`error: ${err.message}`);
+    });
+    return setPokemon({});
+    /* fetch(`/pokemons/${id}`)
             .then((response) => response.json())
             .then((poke) => {
+              console.log(poke);
                 if (poke.name) {
                   setPokemon(poke);
                 } else {
@@ -26,7 +36,7 @@ function Detail() {
             .catch((err) => {
                 console.log(`error: ${err.message}`);
             });
-            return setPokemon({});
+            return setPokemon({}); */
   },[id])
 
   redirectHome(pokemonDeleted,navigate)
@@ -39,7 +49,7 @@ function Detail() {
         (<div className={styles.detail}>
           <div className={styles.container}>
             <div className={styles.header}>
-              <Link className={styles.back} to={"/home"}>{"<"}</Link>
+              <Link className={styles.back} to={"/home"}>volver</Link>
               {typeof pokemon.id === "string" && <Link className={styles.edit} to={`/modify/${pokemon.id}`}></Link> }
               <div className={styles.name}>{name}</div>
             </div>
