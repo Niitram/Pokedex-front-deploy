@@ -34,7 +34,7 @@ function Detail() {
   const {name, image, hp,attack,defense,speed,height,weight,types} = pokemon
   
   return (
-    <>
+    <div>
       {pokemon.name?
         (<div className={styles.detail}>
           <div className={styles.container}>
@@ -86,7 +86,7 @@ function Detail() {
         </div>)
       :
         (<div>Loading...</div>)}
-    </>
+    </div>
   )
 }
 
