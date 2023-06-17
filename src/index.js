@@ -6,10 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 import store from "./Redux/store"
-import axios from "axios"
-
-axios.defaults.baseURL = "https://pokedex-back-deploy-pokedex.up.railway.app/"
-
 
 ReactDOM.render(
   <Provider store={store}>

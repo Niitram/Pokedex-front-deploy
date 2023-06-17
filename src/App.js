@@ -9,7 +9,8 @@ import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 import ModifyPokemon from './Views/ModifyPokemon/ModifyPokemon';
 
-
+import axios from "axios";
+axios.defaults.baseURL = "https://beautifybackend-production.up.railway.app/";
 
 function App() {
   const locationNow = useLocation()

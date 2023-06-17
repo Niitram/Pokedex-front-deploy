@@ -8,7 +8,7 @@ import FilterAttack from '../allFilters/FilterAttack/FilterAttack';
 import styles from './Filters.module.css'
 import { handleOriginFilterChange, handleSortOrderAttackChange, handleSortOrderNameChange, handleSubmit, handleTypeFilterChange } from './handlersFilters';
 
-function Filters() {
+function Filters({setCurrentPage}) {
 
 
     const dispatch = useDispatch()
@@ -27,12 +27,12 @@ function Filters() {
             }}>
                 <div>
                     <FilterTypes handleTypeFilterChange={(e)=>{
-                        handleTypeFilterChange(e,selectedTypes, setSelectedTypes,dispatch)
+                        handleTypeFilterChange(e,selectedTypes, setSelectedTypes,dispatch,setCurrentPage)
                     }} selectedTypes={selectedTypes}/>
                 </div>
                 <div>
                     <FilterOrigin handleOriginFilterChange={(e)=>{
-                        handleOriginFilterChange(e, dispatch)
+                        handleOriginFilterChange(e, dispatch,setCurrentPage)
                     }} />
                 </div>
                 <div>

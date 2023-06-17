@@ -14,8 +14,8 @@ class Footer extends React.Component{
             <div className={styles.containerInfo}>
                 <h3>Created by: Marto</h3>
                 <div className={styles.containerLinks}>
-                    {/* <a className={styles.linkGitHub}  href="https://github.com/Niitram"></a>
-                    <a className={styles.linkLinkedIn}  href="https://www.linkedin.com/in/martin-marchessi/"></a> */}
+                    <a className={styles.linkGitHub} target="_blank" rel="noopener" href="https://github.com/Niitram"></a>
+                    <a className={styles.linkLinkedIn} target="_blank" rel="noopener" href="https://www.linkedin.com/in/martin-marchessi/"></a>
                 </div>
             </div>
             <div className={styles.containerScroll}>

@@ -9,20 +9,9 @@ export const ORDER_NAME = "ORDER_NAME"
 export const ORDER_ATTACK = "ORDER_ATTACK"
 export const DELETE_POKEMON = "DELETE_POKEMON"
 
+
 /* busca un pokemon en db y en API */
 export const searchByName = (pokemonData) => {
-    /* return async function (dispatch) {
-        const response = await axios.get(`${URL_BASE}/pokemons/name`, { params: { name: name } })
-        if (response.data === "pokemon no encontrado") {
-            window.alert('Pokemon not found');
-        } else {
-            //Si lo encuentra devuelve un objeto con el pokemon
-            dispatch({
-                type: SEARCH_BY_NAME,
-                payload: response.data
-            })
-        }
-    } */
     return {
         type: SEARCH_BY_NAME,
         payload: pokemonData
@@ -42,7 +31,7 @@ export const getAllPokemons = () => {
 export const deletePokemon = (id) => {
     try {
         return async function (dispatch) {
-            await axios.delete(`/pokemons/${id}`)
+            await axios.delete(`${URL_BASE}/pokemons/${id}`)
             dispatch({
                 type: DELETE_POKEMON,
                 payload: id
@@ -56,7 +45,7 @@ export const deletePokemon = (id) => {
 /* trae todos los types */
 export const getAllTypes = () => {
     return async function (dispatch) {
-        const response = await axios.get(`/types`)
+        const response = await axios.get(`${URL_BASE}/types`)
         dispatch({
             type: GET_ALL_TYPES,
             payload: response.data
