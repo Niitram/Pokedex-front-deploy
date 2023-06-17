@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import ModifyPokemon from './Views/ModifyPokemon/ModifyPokemon';
 
 import axios from "axios";
-axios.defaults.baseURL = "https://beautifybackend-production.up.railway.app/";
+axios.defaults.baseURL = "https://pokedex-back-deploy-pokedex.up.railway.app/";
 
 function App() {
   const locationNow = useLocation()
